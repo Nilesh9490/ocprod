@@ -288,16 +288,3 @@ resource "aws_ecs_service" "onchain-blockchain-service" {
 }
 
 ##################################################
-
-resource "aws_api_gateway_vpc_link" "vpc_link" {
- name        = "${terraform.workspace}-vpc-link"
- target_arns = [ aws_lb.nlb.arn ]
-}
-
-resource "aws_api_gateway_rest_api" "uat-apigatway" {
-  name        = "${terraform.workspace}-api-gateway"
-  description = "UAT API Gateway"
-   endpoint_configuration {
-    types = ["REGIONAL"]
-  }
-}
