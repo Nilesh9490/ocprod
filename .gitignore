@@ -1,0 +1,7 @@
+*.terraform
+terraform.*
+.terraform.*
+ssh_key
+ssh_key.pub
+gomeme-ssh_key
+gomeme-ssh_key.pub
