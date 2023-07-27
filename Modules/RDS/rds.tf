@@ -45,3 +45,12 @@ resource "aws_db_instance" "rds" {
 output "rds_endpoint" {
   value = aws_db_instance.rds.endpoint
 }
+
+output "database_username" {
+  # value = var.database_username
+  value = aws_db_instance.rds.username
+}
+
+output "database_password" {
+  value = aws_db_instance.rds.password
+}
