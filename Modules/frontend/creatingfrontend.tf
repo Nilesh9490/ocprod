@@ -56,7 +56,7 @@ resource "aws_s3_object" "dist" {
   depends_on = [aws_s3_bucket.s3Bucket]
 
   for_each      = fileset("${var.static_assets_directory}", "*")
-  bucket        = "${terraform.workspace}-aqwsedrftgs3bucket"
+  bucket        = "${terraform.workspace}-s3bucket"
   key           = each.value
   source        = "${var.static_assets_directory}${each.value}"
   etag          = filemd5("${var.static_assets_directory}${each.value}")

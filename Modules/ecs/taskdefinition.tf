@@ -6,7 +6,7 @@ resource "aws_ecs_task_definition" "onchain_user_service" {
 [
   {
     "name": "${terraform.workspace}-user",
-    "image": "577900654051.dkr.ecr.eu-west-2.amazonaws.com/uat-onchain-user:latest",
+    "image": "${var.user_image}",
     "command": ["/bin/sh", "-c", "npm run migration:run && npm run pm2"],
     "portMappings": [
       {
@@ -40,7 +40,7 @@ resource "aws_ecs_task_definition" "onchain_poll_service" {
 [
   {
     "name": "${terraform.workspace}-poll",
-    "image": "577900654051.dkr.ecr.eu-west-2.amazonaws.com/uat-onchain-poll:latest",
+    "image": "${var.poll_image}",
     "command": ["/bin/sh", "-c", "npm run migration:run && npm run pm2"],
     "portMappings": [
       {
@@ -74,7 +74,7 @@ resource "aws_ecs_task_definition" "onchain_reward_service" {
 [
   {
     "name": "${terraform.workspace}-reward",
-    "image": "577900654051.dkr.ecr.eu-west-2.amazonaws.com/uat-onchain-reward:latest",
+    "image": "${var.reward_image}",
     "command": ["/bin/sh", "-c", "npm run migration:run && npm run pm2"],
     "portMappings": [
       {
@@ -108,7 +108,7 @@ resource "aws_ecs_task_definition" "onchain_blockchain_service" {
 [
   {
     "name": "${terraform.workspace}-blockchain",
-    "image": "577900654051.dkr.ecr.eu-west-2.amazonaws.com/uat-onchain-blockchain:latest",
+    "image": "${var.blockchain_image}",
     "command": ["/bin/sh", "-c", "npm run pm2"],
     "portMappings": [
       {

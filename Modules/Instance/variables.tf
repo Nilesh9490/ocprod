@@ -61,15 +61,16 @@ variable "public_subnets" {
   description = "public subnet IDs"
   type        = list(string)
 }
-variable "db_name" {
-  default = "demo-db-test"
-}
-variable "db_name2" {
-  default = "demo-db2-test"
-}
-variable "rds_endpoint" {}
-variable "database_username" {}
-variable "database_password" {}
+
+# variable "db_name" {
+#   default = "demo-db-test"
+# }
+# variable "db_name2" {
+#   default = "demo-db2-test"
+# }
+# variable "rds_endpoint" {}
+# variable "database_username" {}
+# variable "database_password" {}
 
 # variable "private_subnets" {
 #   description = "private subnet IDs"

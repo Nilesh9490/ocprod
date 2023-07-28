@@ -31,7 +31,7 @@ resource "aws_autoscaling_group" "ecs-autoscaling" {
 
   tag {
     key                 = "Name"
-    value               = "ecs-ec2-container"
+    value               = "${terraform.workspace}-ecs-ec2-container"
     propagate_at_launch = true
   }
 }
@@ -57,7 +57,7 @@ resource "aws_lb" "nlb" {
   }
 }
 
-#ELB Target Group for User Service
+#NLB Target Group for User Service
 resource "aws_lb_target_group" "nlb-user-target-group" {
   name        = "${terraform.workspace}-user-target-group"  
   port        = 4001

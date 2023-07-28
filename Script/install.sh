@@ -31,15 +31,3 @@ if ! command_exists psql14; then
   sudo apt-get install -y postgresql-14
 fi
 
-# Variables
-RDS_ENDPOINT="$1"
-DB_USERNAME="$2"
-DB_PASSWORD="$3"
-DB_NAME="$4"  # Replace with the desired database name
-DB_NAME2="$5"
-# Create the database using psql
-echo "Creating database '$DB_NAME' in RDS instance..."
-PGPASSWORD=$DB_PASSWORD psql -h $RDS_ENDPOINT -U $DB_USERNAME -d postgres -c "CREATE DATABASE $DB_NAME"
-PGPASSWORD=$DB_PASSWORD psql -h $RDS_ENDPOINT -U $DB_USERNAME -d postgres -c "CREATE DATABASE $DB_NAME2"
-
-echo "Database creation completed!"

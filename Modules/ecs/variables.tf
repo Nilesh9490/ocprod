@@ -22,3 +22,21 @@ variable "nlb_target_type" {
 variable "task_network_mode" {
   default = "awsvpc"
 }
+
+variable "repo_names" {
+  type    = list(string)
+  default = ["user", "poll", "reward", "blockchain"]
+}
+
+variable "user_image"{
+  default = "577900654051.dkr.ecr.eu-west-2.amazonaws.com/uat-onchain-user:latest"
+}
+variable "poll_image"{
+  default = "577900654051.dkr.ecr.eu-west-2.amazonaws.com/uat-onchain-poll:latest"
+}
+variable "reward_image"{
+  default = "577900654051.dkr.ecr.eu-west-2.amazonaws.com/uat-onchain-reward:latest"  
+}
+variable "blockchain_image"{
+  default = "577900654051.dkr.ecr.eu-west-2.amazonaws.com/uat-onchain-blockchain:latest" 
+}
