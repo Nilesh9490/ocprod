@@ -25,18 +25,21 @@ variable "task_network_mode" {
 
 variable "repo_names" {
   type    = list(string)
-  default = ["user", "poll", "reward", "blockchain"]
+  default = ["user", "cms", "reward", "notification", "auth"]
 }
 
 variable "user_image"{
-  default = "577900654051.dkr.ecr.eu-west-2.amazonaws.com/uat-onchain-user:latest"
+  default = "gomeme/uat-gomeme-user:latest"
 }
-variable "poll_image"{
-  default = "577900654051.dkr.ecr.eu-west-2.amazonaws.com/uat-onchain-poll:latest"
+variable "cms_image"{
+  default = "gomeme/uat-gomeme-cms:latest"
 }
 variable "reward_image"{
-  default = "577900654051.dkr.ecr.eu-west-2.amazonaws.com/uat-onchain-reward:latest"  
+  default = "gomeme/uat-gomeme-reward:latest"  
 }
-variable "blockchain_image"{
-  default = "577900654051.dkr.ecr.eu-west-2.amazonaws.com/uat-onchain-blockchain:latest" 
+variable "notification_image"{
+  default = "gomeme/uat-gomeme-notification:latest" 
+}
+variable "auth_image"{
+  default = "gomeme/uat-gomeme-auth:latest" 
 }

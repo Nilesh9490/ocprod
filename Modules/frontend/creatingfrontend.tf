@@ -14,12 +14,12 @@ locals {
 
 resource "aws_cloudfront_origin_access_identity" "origin_access_identity" {
   
-  comment = "${terraform.workspace}-aqwsedrftgs3bucket"
+  comment = "${terraform.workspace}-s3bucket"
 }
 
 resource "aws_s3_bucket" "s3Bucket" {
   depends_on = [aws_cloudfront_origin_access_identity.origin_access_identity]  
-  bucket = "${terraform.workspace}-aqwsedrftgs3bucket"
+  bucket = "${terraform.workspace}-s3bucket"
 
   policy = <<EOF
 {
